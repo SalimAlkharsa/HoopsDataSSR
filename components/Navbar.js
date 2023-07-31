@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import ReactGA from "react-ga4";
 import server_link from "../server_link";
 import { Helmet } from "react-helmet";
 import Link from "next/link";
