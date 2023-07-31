@@ -2,29 +2,12 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
-import style from "../../styles/markdown-styles.module.css";
-import server_link from "../../server_link";
+import style from "../../styles/markdown-styles.module.css"; // Update the path to your CSS module
+import server_link from "../../server_link"; // Update the path to your server_link file
 import Navbar from "../../components/Navbar";
 
 const ArticlePage = ({ article }) => {
-  const router = useRouter();
-  const articleData = article ? article[0] : null;
-
-  // Handle the case when the article is not found
-  if (!articleData) {
-    return (
-      <>
-        <Helmet>
-          <title>Article Not Found - HoopsData</title>
-          <meta name="description" content="Article Not Found - HoopsData" />
-        </Helmet>
-        <div>
-          <h1>Article Not Found</h1>
-          <p>The article you are looking for could not be found.</p>
-        </div>
-      </>
-    );
-  }
+  const articleData = article[0];
 
   return (
     <>
@@ -48,9 +31,7 @@ const ArticlePage = ({ article }) => {
           </div>
 
           <body className="body-art">
-            <ReactMarkdown className={style.reactMarkDown}>
-              {articleData["Article-md"]}
-            </ReactMarkdown>
+            <ReactMarkdown className={style.reactMarkDown}>{articleData["Article-md"]}</ReactMarkdown>
           </body>
 
           <iframe
@@ -69,33 +50,12 @@ const ArticlePage = ({ article }) => {
   );
 };
 
-export async function getStaticPaths() {
-  try {
-    // Fetch the slugs of all articles to generate paths for pre-rendering
-    const response = await fetch(server_link + "/Articles/Slugs");
-    const articles = await response.json();
-    const paths = articles.map((article) => ({
-      params: { title: article },
-    }));
+export async function getServerSideProps({ params }) {
+  // Fetch the specific article data based on the slug (params.title)
+  const response = await fetch(server_link + "/Articles/" + params.title);
+  const article = await response.json();
 
-    return { paths, fallback: false }; // fallback: false means that other routes should 404
-  } catch (error) {
-    console.error("Error fetching article slugs:", error);
-    return { paths: [], fallback: false }; // or you can return { notFound: true } for a 404 page
-  }
-}
-
-export async function getStaticProps({ params }) {
-  try {
-    // Fetch the specific article data based on the slug (params.title)
-    const response = await fetch(server_link + "/Articles/" + params.title);
-    const article = await response.json();
-
-    return { props: { article } };
-  } catch (error) {
-    console.error("Error fetching article data:", error);
-    return { props: { article: null } }; // or you can return { notFound: true } for a 404 page
-  }
+  return { props: { article } };
 }
 
 export default ArticlePage;
