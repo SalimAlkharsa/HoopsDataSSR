@@ -24,9 +24,19 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <Helmet>
+           <Helmet>
         {/* Set title, description, and image based on article data FaceBook*/}
-        {/* ... Helmet code ... */}
+        <title>{"HoopsData Sports Through Data"}</title>
+        <meta property="og:title" content={"HoopsData Sports Through Data"} />
+        <meta property="og:description" content={"Sports and NBA done through analytics and data"} />
+        <meta property="og:image" content={"%PUBLIC_URL%/Hoops Data.png"} />
+
+        {/* Twitter meta tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@Hoops.dataa" />
+        <meta name="twitter:title" content={"HoopsData Sports Through Data"} />
+        <meta name="twitter:description" content={"HoopsData Sports Through Data"} />
+        <meta name="twitter:image" content={"%PUBLIC_URL%/Hoops Data.png"} />
       </Helmet>
 
       <div className={styles["grid-container"]}>
