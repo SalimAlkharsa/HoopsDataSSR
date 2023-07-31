@@ -1,0 +1,52 @@
+.default {
+  font-family: Tiempos, serif;
+  color: rgb(0, 0, 0);
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+  padding-bottom: 1in;
+}
+
+
+.title {
+  padding-left: 24px;
+  padding-right: 24px;
+  text-align: center;
+  font-size: 42px;
+}
+
+.extraInfo {
+  flex-grow: 0;
+  max-width: 100%;
+  flex-basis: 100%;
+  text-align: center;
+  font-size: small;
+}
+
+.body-art {
+  color: rgb(51, 51, 51);
+  font-family: adobe-caslon-pro, serif;
+  font-size: 21px;
+  font-weight: normal;
+  line-height: 1.5;
+  padding-left: 24px;
+  padding-right: 24px;
+  max-width: 674px;
+  margin-right: auto;
+  margin-left: auto;
+  line-height: 1.5;
+}
+
+.cover {
+  min-width: 100%;
+  max-width: 100%;
+  margin-top: 0.91in;
+  object-fit: cover;
+}
+
+.BeehivePromptPage{
+  margin-left: 0%;
+  margin-right: 5%;
+  border-radius: 4px;
+  border: 2px solid #e5e7eb; 
+  background-color: transparent;
+}
