@@ -1,6 +1,6 @@
 /* used to generate the main navbar */
-.NavbarItems {
-  position: fixed;
+.navbaritems {
+  position: absolute;
   background: #000000ee;
   height: 0.92in;
   display: flex;
@@ -12,64 +12,49 @@
 
 /* used for the HoopsData text logo */
 
-.logo-pic {
+.logopic {
   display: inline-flex;
   align-items: center;
   margin-left: 1%;
 }
 
-
-
 /* used to make the list in the laptop view */
-.nav-menu {
+.navmenu {
   display: grid;
   grid-template-columns: repeat(10, auto);
   list-style: none;
   margin-left: auto;
+  margin-right: 0;
   margin-top: 0.3in;
-  font-size: large;
 }
 
 /* used to format the text that shows in the menu */
-.Links {
+.links {
   color: #ff2b2b;
-  font-size: 25px;
+  font-size: 166%;
   padding: 0.35in;
   text-decoration: none;
   border: none;
   background-color: transparent;
 }
 
-.Links1 {
-  color: #ff2b2b;
-  padding: 0.35in;
-  text-decoration: none;
-  font-size: 25px;
-  border: none;
-  background-color: transparent;
-}
 
 /* used to create the hover animation on the links */
-.Links:hover {
+.links:hover {
   background-color: #ff2b2b;
   color: #ededed;
   transition: 0.02ms;
 }
 
-.Links1:hover {
-  background-color: #ff2b2b;
-  color: #ededed;
-  transition: 0.02ms;
-}
 
 @media screen and (max-width: 700px) {
-  .logo-pic {
+  .logopic {
     display: none;
   }
 
-    .Links:hover {
-      color: #ff2b2b;
-      background-color: black;
-      transition: 0.02ms;
-    }
+  .links:hover {
+    color: #ff2b2b;
+    background-color: black;
+    transition: 0.02ms;
+  }
 }

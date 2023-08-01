@@ -22,7 +22,7 @@
   font-size: small;
 }
 
-.body-art {
+.bodyart {
   color: rgb(51, 51, 51);
   font-family: adobe-caslon-pro, serif;
   font-size: 21px;
@@ -39,7 +39,7 @@
 .cover {
   min-width: 100%;
   max-width: 100%;
-  margin-top: 0.91in;
+  margin-top: 0.45in;
   object-fit: cover;
 }
 

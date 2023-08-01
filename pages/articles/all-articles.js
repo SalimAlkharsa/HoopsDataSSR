@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import Link from "next/link"; // Import Link from Next.js
 import server_link from "../../server_link"; // Update the path to your server_link file
-import styles from "../../styles/Display.module.css"; // Update the path to your CSS module
+import styles from "../../styles/Grid.module.css"; // Update the path to your CSS module
 
 const AllArticles = () => {
   const [articles, setArticles] = useState([]);
@@ -42,22 +42,22 @@ const AllArticles = () => {
         />
         <meta name="twitter:image" content={"%PUBLIC_URL%/Hoops Data.png"} />
       </Helmet>
-      <div className={styles["grid-container"]}>
+      <div className={styles.gridcontainer}>
+        {""}
         {articles.map((article, index) => {
           return (
             <Link
+              div className={styles.griditem}
               href={`/articles/${encodeURIComponent(article.Title)}`}
               key={index}
             >
-              <div className={styles["grid-item"]}> {/* Use <a> tag for client-side navigation */}
-                <img src={article.imgLink} alt="test pic" className={styles["pic"]} />
-                <div className={styles["article-title"]}> {article.Title} </div>
-                <div className={styles["article-detail"]}>
+                <img src={article.imgLink} alt="test pic" className={styles.pic} />
+                <div className={styles.articletitle}> {article.Title} </div>
+                <div className={styles.articledetail}>
                   <div>By: {article["Written By"]}</div>
                   <div>Date: {String(article.Date["$date"]).substring(0, 10)} </div>
                 </div>
-                <div className={styles["article-desc"]}> {article.Description} </div>
-              </div>
+                <div className={styles.articledesc}> {article.Description} </div>
             </Link>
           );
         })}

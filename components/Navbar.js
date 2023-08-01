@@ -7,25 +7,20 @@ import styles from "../styles/Navbar.module.css"; // If you want to add custom s
 
 const Navbar = () => {
   return (
-    <nav className={styles.NavbarItems}>
-      <Link href="/home">
-        <div className={styles.logoPic}>
+    <nav className={styles.navbaritems}>
+      <Link className={styles.logopic} href="/" >
           <img src={"/TopLogo.png"} alt="logo" />
-        </div>
       </Link>
-      <div className={styles.navMenu}>
-        <ul>
-          <li>
-            <Link href="/Home">
-              <div className={styles.Links}>Home</div>
-            </Link>
-          </li>
-          <li>
-            <Link href="/Newsletter">
-              <div className={styles.Links}>Newsletter</div>
-            </Link>
-          </li>
-        </ul>
+      <div className={styles.navmenu}>
+        <li>
+            <Link href="/" className={styles.links}>
+              Home
+          </Link>
+          
+          <Link href="/Newsletter" className={styles.links}>
+              Newsletter
+          </Link>
+        </li>
       </div>
     </nav>
   );

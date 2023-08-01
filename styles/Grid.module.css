@@ -1,12 +1,12 @@
 /* The container for all the boxes */
-.grid-container {
+.gridcontainer {
   padding-top: 0.92in;
   display: grid;
   grid-template-columns: 33.3333% 33.3333% 33.3333%;
   background-color: #ededed;
 }
 
-.grid-container :hover {
+.gridcontainer :hover {
   background-color: #ff2b2b;
   transition: 0.02ms;
   cursor: pointer;
@@ -14,7 +14,7 @@
 
 
 /* The box for the individual article*/
-.grid-item {
+.griditem {
   background-attachment: scroll;
   overflow-y: hidden;
   background-clip: border-box;
@@ -34,13 +34,13 @@
 }
 
 /*Article Parts*/
-.article-author {
+.articleauthor {
   margin-left: 15%;
   font-size: medium;
   text-align: left;
 }
 
-.article-date {
+.articledate {
   margin-top: 10%;
   margin-left: 15%;
   margin-right: 15%;
@@ -48,7 +48,7 @@
   text-align: left;
 }
 
-.article-detail {
+.articledetail {
   margin-left: 15%;
   margin-right: 15%;
   font-size: medium;
@@ -63,7 +63,7 @@
   object-fit: cover;
 }
 
-.article-title {
+.articletitle {
   margin-left: 15%;
   margin-right: 15%;
   font-size: x-large;
@@ -71,7 +71,7 @@
   color: black;
 }
 
-.article-desc {
+.articledesc {
   margin-bottom: 10%;
   margin-left: 15%;
   margin-right: 15%;
@@ -79,18 +79,7 @@
   text-align: left;
 }
 
-.TEST {
-  width: 50%;
-  margin: 0 auto;
-}
-
-.solid {
-  display: fixed;
-  position: absolute;
-  margin-top: 0.92in;
-}
-
-.NewLetterHome{
+.NewLetterHome {
   margin-left: 25%;
   margin-right: 25%;
   border-radius: 4px;
@@ -98,53 +87,48 @@
   background-color: transparent;
 }
 
+/* For the phone */
 @media screen and (max-width: 700px) {
+  .gridcontainer {
+    padding-top: 0.92in;
+    display: block;
+    grid-template-columns: 100%;
+    background-color: #ededed;
+  }
 
-    .grid-container {
-        padding-top: 0.92in;
-        display: block;
-        grid-template-columns: 100%;
-        background-color: #ededed;
-      }
-    
-      .grid-container :hover {
-        background-color: #f3d0d0;
-      }
-    
-      /* The box for the individual article*/
-      .grid-item {
-        min-height: 70%;
-      }
-    
-      /*Article Parts*/
-      .article-author {
-        margin-left: 15%;
-        font-size: medium;
-        text-align: left;
-      }
-    
-      .article-date {
-        display: inline-block;
-        font-size: small;
-        text-align: left;
-      }
-    
-    
-      .article-title {
-        margin-left: 15%;
-        margin-right: 15%;
-        font-size: x-large;
-        text-align: left;
-        color: black;
-      }
-    
-      .article-desc {
-        display: block;
-        height: 50px;
-      }
-      
-  .solid {
-    margin-top: 0;
-    margin-bottom: 0.92in;
+  .gridcontainer :hover {
+    background-color: #f3d0d0;
+  }
+
+  /* The box for the individual article*/
+  .griditem {
+    min-height: 70%;
+  }
+
+  /*Article Parts*/
+  .articleauthor {
+    margin-left: 15%;
+    font-size: medium;
+    text-align: left;
+  }
+
+  .articledate {
+    display: inline-block;
+    font-size: small;
+    text-align: left;
+  }
+
+
+  .articletitle {
+    margin-left: 15%;
+    margin-right: 15%;
+    font-size: x-large;
+    text-align: left;
+    color: black;
+  }
+
+  .articledesc {
+    display: block;
+    height: 50px;
   }
 }
