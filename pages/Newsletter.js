@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet";
+import Head from "next/head";
 import server_link from "../server_link"; // Update the path to your server_link file
 import Navbar from "../components/Navbar";
 import styles from "../styles/Grid.module.css";
@@ -22,7 +22,7 @@ const Newsletter = () => {
   return (
       <div>
         <Navbar />
-      <Helmet>
+      <Head>
         {/* Set title, description, and image based on article data FaceBook*/}
         <title>{"Newsletters - HoopsData"}</title>
         <meta property="og:title" content={"HoopsData Sports Through Data"} />
@@ -41,7 +41,7 @@ const Newsletter = () => {
           content={"HoopsData Sports Through Data"}
         />
         <meta name="twitter:image" content={"/Hoops Data.png"} />
-      </Helmet>
+      </Head>
       <div className={styles.gridcontainer}>
         <div className={styles.griditem} style={{ background: "#ededed" }}>
           <iframe

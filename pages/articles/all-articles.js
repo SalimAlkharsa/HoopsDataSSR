@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet";
+import Head from "next/head";
 import Link from "next/link"; // Import Link from Next.js
 import server_link from "../../server_link"; // Update the path to your server_link file
 import styles from "../../styles/Grid.module.css"; // Update the path to your CSS module
@@ -22,7 +22,7 @@ const AllArticles = () => {
 
   return (
     <div>
-      <Helmet>
+      <Head>
         {/* Set title, description, and image based on article data FaceBook*/}
         <title>{"All Articles"}</title>
         <meta property="og:title" content={"HoopsData Sports Through Data"} />
@@ -41,7 +41,7 @@ const AllArticles = () => {
           content={"HoopsData Sports Through Data"}
         />
         <meta name="twitter:image" content={"%PUBLIC_URL%/Hoops Data.png"} />
-      </Helmet>
+      </Head>
       <div className={styles.gridcontainer}>
         {""}
         {articles.map((article, index) => {
