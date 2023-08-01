@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
 import style from "../../styles/markdown-styles.module.css"; // Update the path to your CSS module
@@ -12,7 +12,7 @@ const ArticlePage = ({ article }) => {
 
   return (
     <>
-      <Helmet>
+      <Head>
         {/* Set title, description, and image based on article data FaceBook*/}
         
         <title>{articleData ? articleData.Title +" - HoopsData" : "HoopsData"}</title>
@@ -26,7 +26,7 @@ const ArticlePage = ({ article }) => {
       <meta name="twitter:title" content={articleData ? articleData.Title : "HoopsData"} />
       <meta name="twitter:description" content={articleData ? articleData.Description : "HoopsData"} />
       <meta name="twitter:image" content={articleData ? articleData.imgLink : "HoopsData"} />
-      </Helmet>
+      </Head>
 
       <div className={articlestyle.default}>
         <div className={articlestyle.Article}>
