@@ -1,1 +1,1 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+This repo contains some of the development code used on the HoopsData website. This version of the repo is not deployed.
