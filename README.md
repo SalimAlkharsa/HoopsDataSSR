@@ -1,1 +1,1 @@
-This repo contains some of the development code used on the HoopsData website. This version of the repo is not deployed.
+This repo contains some of the development code used on the HoopsData website. This version of the repo is not deployed in the main website, it is only deployed as a dev server for testing and debugging.
